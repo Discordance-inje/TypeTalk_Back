@@ -1,4 +1,4 @@
-package com.discordance.discordance.domain;
+package com.discordance.discordance.domain.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
