@@ -4,6 +4,7 @@ package com.discordance.discordance.repository;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import com.discordance.discordance.domain.Record;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,10 +1,12 @@
-package com.discordance.discordance.domain;
+package com.discordance.discordance.vo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @JsonSerialize
+@Getter
 public class RecordVO {
 
     private String value;

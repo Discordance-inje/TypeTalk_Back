@@ -1,4 +1,6 @@
-package com.discordance.discordance.domain;
+package com.discordance.discordance.vo;
+
+import com.discordance.discordance.domain.Result;
 
 public class ResultVO {
 
