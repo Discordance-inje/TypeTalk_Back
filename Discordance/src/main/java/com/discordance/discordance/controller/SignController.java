@@ -4,6 +4,8 @@ import com.discordance.discordance.dto.ApiResponse;
 import com.discordance.discordance.dto.request.SignInRequest;
 import com.discordance.discordance.service.SignService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +23,8 @@ public class SignController {
 
     @Operation(summary = "회원 가입")
     @PostMapping("/sign-up")
-    public ApiResponse signUp(@RequestParam String account, @RequestParam String userPassword, @RequestParam String userNickName, MultipartFile profilePicFile) throws IOException{
+    public ApiResponse signUp(@RequestParam String account, @RequestParam String userPassword, @RequestParam String userNickName,
+                              @Parameter(description = "프로필 사진", required = true, content = @Content(mediaType = "multipart/form-data")) MultipartFile profilePicFile) throws IOException{
             return ApiResponse.success(signService.registerMember(account, userPassword, userNickName, profilePicFile));
     }
 
@@ -33,6 +36,5 @@ public class SignController {
 
     @PostMapping("/test")
     public void getImage( MultipartFile test){
-
     }
 }
